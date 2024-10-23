@@ -27,7 +27,7 @@ O polimorfismo é a capacidade que um objeto tem de se comportar de diferentes f
 Classes são declaradas utilizando a palavra reservada `class`.
 
 ```php
-class Animal
+class Pessoa
 {
     // Constantes
     
@@ -42,7 +42,7 @@ class Animal
 Classes podem ser instanciadas utilizando a palavra reservada `new`.
 
 ```php
-$gato = new Animal();
+$fulano = new Pessoa();
 ```
 
 ## Atributos
@@ -50,26 +50,16 @@ $gato = new Animal();
 Atributos são as características de um objeto. Eles são representados por variáveis dentro da classe.
 
 ```php
-class Animal
+class Pessoa
 {
-    protected string $nome;
-
-    protected string $especie;
-    
-    public function __construct(string $nome, string $especie)
-    {
-        $this->nome    = $nome;
-        $this->especie = $especie;
+      public function __construct(
+        protected int $id, 
+        public string $nome, 
+        public int $cpf){
+        $this->id = $id;
+        $this->nome = $nome;
+        $this->cpf = $cpf;
     }
-}
 
-// ou
-
-class Animal
-{
-    public function __construct(
-        protected string $nome,
-        protected string $especie
-    ) {}
 }
 ```
