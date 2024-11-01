@@ -10,25 +10,28 @@
   <h1><?= $title ?></h1>
  <?php 
  include 'ClassFuncionario.php';
-   $pessoa = new Funcionario(
+ include 'ClassGerente.php';
+   $pessoa1 = new Funcionario(
     1, 
     'Lucas', 
     '12345678901'
   );
 
-  var_dump( $pessoa);
+  var_dump( $pessoa1);
 
   echo'<br>';
 
-  $pessoa->setNome('Mauricio');
+  $pessoa1->setNome('Mauricio');
   
-  var_dump( $pessoa);
+  var_dump( $pessoa1);
 
-  $pessoa->setProfissao('Soldador');
+  $pessoa1->setProfissao('Soldador');
 
   echo'<br>';
+
+  $pessoa1->trabalhar();
   
-  var_dump( $pessoa);
+  var_dump( $pessoa1);
  ?>
   
 </body>

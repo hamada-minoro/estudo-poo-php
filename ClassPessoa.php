@@ -1,6 +1,6 @@
 <?php 
   
-  class Pessoa{
+  class Pessoa {
     protected int $id;
     public string $nome; 
     public int $cpf;
