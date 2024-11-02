@@ -8,6 +8,13 @@
 </head>
 <body>
   <h1><?= $title ?></h1>
+  <div>
+    <h1>Aulas</h1>
+    <a href="Constantes.php">Constantes</a>
+  </div>
+
+<div>
+  <h1>Classes, Herança e Polimorfismo</h1>
  <?php 
  include 'ClassFuncionario.php';
  include 'ClassGerente.php';
@@ -16,23 +23,28 @@
     'Lucas', 
     '12345678901'
   );
-
+  $pessoa2 = new Gerente(
+    2, 
+    'Lucas', 
+    '12345678901'
+  );
   var_dump( $pessoa1);
-
-  echo'<br>';
+  echo'<br><br>';
+  var_dump( $pessoa2);
+  echo'<br><br>';
 
   $pessoa1->setNome('Mauricio');
-  
-  var_dump( $pessoa1);
 
   $pessoa1->setProfissao('Soldador');
-
-  echo'<br>';
-
+  $pessoa2->setProfissao('RH');
   $pessoa1->trabalhar();
+  $pessoa2->trabalhar();
   
   var_dump( $pessoa1);
+  echo'<br><br>';
+  var_dump( $pessoa2);
  ?>
+ </div>
   
 </body>
 </html>

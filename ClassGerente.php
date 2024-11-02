@@ -1,5 +1,7 @@
 <?php 
 class Gerente extends Pessoa{
+  protected bool $trabalhando = false;
+  
   public function setProfissao(string $profissao){
     return $this->profissao = $profissao;
   }
