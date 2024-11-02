@@ -1,23 +1,18 @@
+<?php declare(strict_types = 1); ?>
 <!DOCTYPE html>
 <html lang="en">
-  <?php $title = 'Classes - Início'?>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><?= $title ?></title>
+  <title>Document</title>
 </head>
 <body>
-  <h1><?= $title ?></h1>
-  <div>
-    <h1>Aulas</h1>
-    <a href="Constantes.php">Constantes</a>
-  </div>
-
 <div>
   <h1>Classes, Herança e Polimorfismo</h1>
  <?php 
- include 'ClassFuncionario.php';
- include 'ClassGerente.php';
+require __DIR__ . '/../vendor/autoload.php';
+use App\ClassFuncionario;
+use App\ClassGerente;
    $pessoa1 = new Funcionario(
     1, 
     'Lucas', 
@@ -32,7 +27,8 @@
   echo'<br><br>';
   var_dump( $pessoa2);
   echo'<br><br>';
-
+  
+  $pessoa1->setCpf('12345678901');
   $pessoa1->setNome('Mauricio');
 
   $pessoa1->setProfissao('Soldador');
@@ -45,6 +41,5 @@
   var_dump( $pessoa2);
  ?>
  </div>
-  
 </body>
 </html>

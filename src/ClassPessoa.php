@@ -1,9 +1,10 @@
 <?php 
-  
+declare(strict_types = 1);
+  namespace src;
   class Pessoa {
     protected int $id;
     public string $nome; 
-    public int $cpf;
+    public string $cpf;
     protected string $profissao;
 
  
@@ -27,7 +28,7 @@
     return $this->nome = $nome;
   }
   public function setCpf(string $cpf){
-    return $this->cpf;
+    return $this->cpf= $cpf;
   }
 
 }
