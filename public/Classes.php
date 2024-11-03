@@ -1,4 +1,11 @@
-<?php declare(strict_types = 1); ?>
+<?php 
+declare(strict_types = 1); 
+require __DIR__ . '/../vendor/autoload.php';
+use App\Greetings;
+use App\Colaborador;
+use App\Desenvolvedor;
+use App\Gerente;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,29 +17,24 @@
 <div>
   <h1>Classes, Herança e Polimorfismo</h1>
  <?php 
-require __DIR__ . '/../vendor/autoload.php';
-use App\ClassFuncionario;
-use App\ClassGerente;
-   $pessoa1 = new Funcionario(
-    1, 
-    'Lucas', 
-    '12345678901'
-  );
-  $pessoa2 = new Gerente(
-    2, 
-    'Lucas', 
-    '12345678901'
-  );
+  $greetings = new Greetings();
+  echo $greetings->message('Minoro');
+  echo '<br><br>';
+  $pessoa1 = new Desenvolvedor();
+  $pessoa2 = new Gerente();
   var_dump( $pessoa1);
   echo'<br><br>';
   var_dump( $pessoa2);
   echo'<br><br>';
   
-  $pessoa1->setCpf('12345678901');
+  $pessoa1->setId(1234);
   $pessoa1->setNome('Mauricio');
+  $pessoa1->setCargo('Senior');
 
-  $pessoa1->setProfissao('Soldador');
-  $pessoa2->setProfissao('RH');
+  $pessoa2->setId(1235);
+  $pessoa2->setNome('José');  
+  $pessoa2->setCargo('Gerente RH');
+
   $pessoa1->trabalhar();
   $pessoa2->trabalhar();
   
