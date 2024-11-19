@@ -1,15 +1,17 @@
 <?php 
 declare(strict_types = 1);
 namespace App;
+use Monolog\Handler\StreamHandler;
+use Monolog\Level;
 Class Logger{
   protected \Monolog\Logger $logger;
   public function __construct(){
     $this->logger = new \Monolog\Logger('app');
     $this->logger->pushHandler(
-      new StreamHandler( __DIR__ . '/../storage/logs', Level::Warning)
+      new StreamHandler( __DIR__ . '/../storage/logs/app.log', Level::Debug)
     );
   }
-  public static function write(string $message){
+  public function write(string $message): void{
     $this->logger->debug($message);
   }
 }

@@ -4,7 +4,7 @@ namespace App;
 
  class Greetings{
   public function message(string $name): string{
-    return "Olá Composer";
+    return "Olá  ".$name.", Seja Bem Vindo";
   }
  }
 

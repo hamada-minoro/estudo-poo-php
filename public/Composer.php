@@ -1,3 +1,9 @@
+<?php
+declare(strict_types=1);
+require __DIR__ . '/../vendor/autoload.php';
+use App\Greetings;
+use App\Logger;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +12,15 @@
   <title>Composer</title>
 </head>
 <body>
+
+
+<?php
+
+$greetings = new Greetings();
+echo $greetings->message('Minoro Hamada');
+(new Logger())->write('Minoro accessed the aplication');
+
+?>
   
 </body>
 </html>
